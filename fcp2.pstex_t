@@ -1,0 +1,47 @@
+\begin{picture}(0,0)%
+\includegraphics{fcp2.pstex}%
+\end{picture}%
+\setlength{\unitlength}{1973sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(10900,12200)(369,-10117)
+\put(7251,-6803){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ e^{\scriptstyle -i \pi / 3} $}%
+}}}}
+\put(9366,-809){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (-)} \ \sigma_{\scriptstyle 2} - m_{\scriptstyle 2} $}%
+}}}}
+\put(9366,-159){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (+)} \ \sigma_{\scriptstyle 1} - m_{\scriptstyle 0} $}%
+}}}}
+\put(384,-8215){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (-)} \ \sigma_{\scriptstyle 2} - m_{\scriptstyle 2} $}%
+}}}}
+\put(384,-7565){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (+)} \ \sigma_{\scriptstyle 0} - m_{\scriptstyle 1} $}%
+}}}}
+\put(9634,-5171){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (+)} \ \sigma_{\scriptstyle 2} - m_{\scriptstyle 0} $}%
+}}}}
+\put(9634,-5821){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (-)} \ \sigma_{\scriptstyle 1} - m_{\scriptstyle 1} $}%
+}}}}
+\put(384,-649){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (-)} \ \sigma_{\scriptstyle 1} - m_{\scriptstyle 1} $}%
+}}}}
+\put(384,  1){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (+)} \ \sigma_{\scriptstyle 0} - m_{\scriptstyle 2} $}%
+}}}}
+\put(3684,-5570){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ e^{\scriptstyle -2\pi i /3} {\scriptstyle \times} \sigma_{\scriptstyle p} $}%
+}}}}
+\put(3689,-2411){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ e^{\scriptstyle +2\pi i /3} {\scriptstyle \times} \sigma_{\scriptstyle p} $}%
+}}}}
+\put(7381,-1490){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ e^{\scriptstyle +i \pi / 3} $}%
+}}}}
+\put(2716,-4167){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}-1}%
+}}}}
+\put(6206,1563){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (+)} \ \sigma_{\scriptstyle 1} - m_{\scriptstyle 2} $}%
+}}}}
+\put(6206,913){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (-)} \ \sigma_{\scriptstyle 0} - m_{\scriptstyle 0} $}%
+}}}}
+\put(6207,-9277){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (+)} \ \sigma_{\scriptstyle 2} - m_{\scriptstyle 1} $}%
+}}}}
+\put(6207,-9927){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$ {\scriptstyle (-)} \ \sigma_{\scriptstyle 0} - m_{\scriptstyle 0} $}%
+}}}}
+\end{picture}%

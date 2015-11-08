@@ -1,0 +1,18 @@
+#
+#
+#
+SRC=$1
+
+# some clean-up first
+#  rm -f ${SRC}.dvi
+#  rm -f feynmanpics.*
+
+#  latex ${SRC}.tex 
+
+#  DISPLAY= mf feynmanpics.mf 
+
+#  latex ${SRC}.tex
+
+  latex ${SRC}.tex && latex ${SRC}.tex && dvips -o ${SRC}.ps ${SRC}.dvi  &&
+  ps2epsi ${SRC}.ps && eps2eps ${SRC}.epsi ${SRC}.eps
+

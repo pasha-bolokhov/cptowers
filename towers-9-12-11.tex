@@ -1,0 +1,1071 @@
+\documentclass[epsfig,12pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{rotating}
+
+%%%%%%%%%
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{color}
+\usepackage{bm}
+%\usepackage{showlabels}
+%%%%%%%%%%%%
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\Tr{{\rm Tr}}
+\newcommand{\nfour}{${\cal N}=4\;$}
+\newcommand{\ntwo}{${\mathcal N}=2\;$}
+\newcommand{\none}{${\mathcal N}=1\,$}
+\newcommand{\ntt}{${\mathcal N}=(2,2)\,$}
+\newcommand{\nzt}{${\mathcal N}=(0,2)\,$}
+\newcommand{\cpn}{CP$(N-1)\,$}
+\newcommand{\ca}{{\mathcal A}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\cw}{{\mathcal W}}
+\newcommand{\cs}{{\mathcal S}}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\zn}{$Z_N$}
+\newcommand{\cd}{${\mathcal D}$}
+\newcommand{\cde}{{\mathcal D}}
+\newcommand{\cf}{${\mathcal F}$}
+\newcommand{\cfe}{{\mathcal F}}
+
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%%%%%%%%%%%%
+%%%%%%%%%%%
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+%\newcommand{\gsim}{\lower.7ex\hbox{$\;\stackrel{\textstyle>}{\sim}\;$}}
+% \newcommand{\lsim}{\lower.7ex\hbox{$
+%\;\stackrel{\textstyle<}{\sim}\;$}}
+%\newcommand{\nfour}{${\mathcal N}=4$ }
+%\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+%\newcommand{\none}{${\mathcal N}=1$ }
+\newcommand{\nonen}{${\mathcal N}=1$}
+%\newcommand{\vp}{\varphi}
+%\newcommand{\pt}{\partial}
+%\newcommand{\ve}{\varepsilon}
+%\newcommand{\gs}{g^{2}}
+%\newcommand{\qt}{\tilde q}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\bla}{\ov{\lambda}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\bgamma}{\ov{\gamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bmm}{{\bar m}}
+\newcommand{\bp}{{\bar p}}
+\newcommand{\bkk}{{\bar k}}
+\newcommand{\br}{{\bar r}}
+
+\newcommand{\nz}{{n^{(0)}}}
+\newcommand{\no}{{n^{(1)}}}
+\newcommand{\bnz}{{\ov{n}{}^{(0)}}}
+\newcommand{\bno}{{\ov{n}{}^{(1)}}}
+\newcommand{\Dz}{{D^{(0)}}}
+\newcommand{\Do}{{D^{(1)}}}
+\newcommand{\bDz}{{\ov{D}{}^{(0)}}}
+\newcommand{\bDo}{{\ov{D}{}^{(1)}}}
+\newcommand{\sigz}{{\sigma^{(0)}}}
+\newcommand{\sigo}{{\sigma^{(1)}}}
+\newcommand{\bsigz}{{\ov{\sigma}{}^{(0)}}}
+\newcommand{\bsigo}{{\ov{\sigma}{}^{(1)}}}
+
+\newcommand{\rrenz}{{r_\text{ren}^{(0)}}}
+\newcommand{\bren}{{\beta_\text{ren}}}
+
+\newcommand{\mbps}{m_{\text{\tiny BPS}}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\hsigma}{{\hat{\sigma}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\hyphenation{con-fi-ning}
+\hyphenation{Cou-lomb}
+\hyphenation{Yan-ki-e-lo-wicz}
+\hyphenation{di-men-si-on-al}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{titlepage}
+
+\begin{flushright}
+FTPI-MINN-xx/xx, UMN-TH-xxxx/xx\\
+September 12, 2011
+\end{flushright}
+
+\vspace{1.1cm}
+
+\begin{center}
+{  \Large \bf  
+			2D -- 4D Correspondence: Towers of Kinks Versus\\[1mm]  Towers of Monopoles
+			in \boldmath{${\mathcal N}=2$} Theories
+			
+}
+\end{center}
+\vspace{0.6cm}
+
+\begin{center}
+
+ {\large
+ \bf   Pavel A.~Bolokhov$^{\,a,b}$,  Mikhail Shifman$^{\,a}$ and \bf Alexei Yung$^{\,\,a,c}$}
+\end {center}
+
+\begin{center}
+
+%\vspace{3mm}
+$^a${\it  William I. Fine Theoretical Physics Institute, University of Minnesota,
+Minneapolis, MN 55455, USA}\\
+$^b${\it Theoretical Physics Department, St.Petersburg State University, Ulyanovskaya~1, 
+	 Peterhof, St.Petersburg, 198504, Russia}\\
+$^{c}${\it Petersburg Nuclear Physics Institute, Gatchina, St. Petersburg
+188300, Russia
+}
+\end{center}
+
+
+\vspace{0.7cm}
+
+
+\begin{center}
+{\large\bf Abstract}
+\end{center}
+
+\hspace{0.3cm}
+\vspace{2cm}
+
+\end{titlepage}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                          I N T R O D U C T I O N                               %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\setcounter{equation}{0}
+
+
+Recently we revisited the problem of  the BPS kink spectrum in 
+	the supersymmetric CP($N-1$) l model with $\mc{Z}_N$-symmetric twisted masses 
+	\cite{Bolokhov:2011mp} in connection with the studies of the curves of marginal stability.
+	We derived the BPS spectrum by combining three requirements: (i) at small values of the mass terms, i.e. at strong 
+	coupling, the solution implied by the mirror representation \cite{MR1,MR2}, in the first order in the twisted 
+	masses \cite{Shifman:2010id}; (ii) consistency in the Argyres--Douglas points, and (iii) quasiclassical limit which had been analyzed previously in \cite{Dor}. 
+	Our analysis is based on the  superpotential of the Veneziano--Yankielowicz type that is
+	exact in the BPS sector. This potential is presented by a multibranch (and, hence, multivalued)
+	function. Therefore, a disambiguation is necessary. The combination of the above three requirements led us
+	to an unambiguous prediction. A 
+	a surprising finding is: in the ${\mathcal N} =2$ CP($N-1$) model with  $\mc{Z}_N$-symmetric twisted masses
+	there are $N-1$ towers of BPS saturated kinks. The previous studies in the literature mention a single tower. 
+	Only this single  tower is seen in the quasiclassical analysis in \cite{Dor}.
+	
+	Since the CP$(N -1)$ model with $\mc{Z}_N$ -symmetric twisted masses appears as a low-energy theory on
+	the world sheet of non-Abelian strings \cite{Shifman:2004dr} supported in certain four-dimensional ${\mathcal N} =2$
+	gauge theories with $N=N_f$, the prediction for the BPS spectrum in two dimensions can be elevated to four dimensions.
+	Thus, our formula simultaneously describes confined monopoles in the Higgs phase of the four-dimensional gauge theory,
+	as explained e.g. in the review paper   \cite{Shifman:2007ce}.
+	Thus, we predict that at large values of the mass differences of the (s)quark fields
+	(which translate into the twisted masses in 2D)  these monopoles appear in the spectrum in the form of 
+	the same $N-1$ towers.
+	
+	In this paper we will discuss the origin and the physical meaning of the phenomenon of $N-1$ towers for 
+	kinks in 2D/monopoles in 4D. To avoid bulky notation and excessive 
+	technicalities we will mostly focus on the simplest nontrivial example,
+	that of CP(2). Generalization to CP$(N-1)$ is conceptually straightforward. We will briefly discuss it at the end.
+	
+	For arbitrary $N$ the $Z_N$ symmetric twisted mass parameters are defined as
+	\beq
+\label{mcirc}
+	m_k = m_0 \cdot e^{2 \pi i k / N}\,,\qquad k=0,1, ..., N-1\,;
+\eeq
+	the set of the mass parameters depends on  a single complex parameter $ m_0 $.
+	In what follows we will assume $m_0$ to be real. For $N=3$ we have three mass parameters, 
+	and two masses in the geometric formulation (they can be viewed as mass terms of the 
+	elementary fermion excitations),
+	namely
+	\begin{eqnarray}
+	&& m_0,\,\,\, m_1 = m_0 e^{2 \pi i  / 3},\,\,\, m_2 = m_0 e^{-2 \pi i  / 3};
+	\nonumber\\[2mm]
+	&&M_1 = m_1-m_0\, , \qquad M_2 = m_2 -m_0 \,.
+	\end{eqnarray}
+	The master formula to be used below takes the form
+	\begin{eqnarray}
+	M_{\rm kink} &=&
+	 U_0 (m_0) + i\, \vec{N} \cdot \vec{m}\,,\nonumber\\[3mm]
+	U_0 (m_0) 
+	 &=& 
+ -\, \frac{1}{2\pi} \left(  e^{2\pi i / 3} \,-\, 1 \right)
+ \nonumber\\[3mm]
+ &\times&
+	\left\{ 3\, \sqrt[3] { m_0^3 \,+\, \Lambda^3 }  +
+		\sum_{j=0}^2 \, m_j\, \ln \, \frac{ \sqrt[3] { m_0^3 \,+\, \Lambda^3 } \,-\, m_j } { \Lambda} \,\right\}\,,
+	\end{eqnarray}
+	where
+	\beq
+	\vec{m} = \left\{ m_0,~ ...,~ m_{N-1}\right\}\,,
+	\eeq 
+	and $\vec N$ is an integer-valued vector determined in \cite{Bolokhov:2011mp}. In fact, there are two such vectors (hence, two towers mentioned above),
+\begin{eqnarray}
+\label{ncp2}
+	\vec{N}_1 &=& \left\{ \, -n \,+\, 1,~~ n,~~ 0 \,\right\},
+	\nonumber\\[2mm]
+	\vec{N}_2 &=& \left\{ \, -n ,~~ n,~~ 1 \,\right\},
+	\label{15}
+\end{eqnarray}
+where $n$ is an integer parameter.
+
+With our parameter values $ U_0 (m_0)$ is an explicit single-valued function. The multivaluedness 
+resides in (\ref{15}). Indeed,
+\begin{eqnarray}
+\vec{m} \, \vec{N}_1  & =&
+ n M_1 +m_0 = n^\prime \, M_1 + m_1\,,
+\nonumber\\[2mm]
+\vec{m} \, \vec{N}_2  & =&
+ n\, M_1 + m_2\,,
+ \nonumber\\[2mm]
+n^\prime &=&
+n-1\,.
+\end{eqnarray}
+
+	
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                          S E M I C L A S S I C S                               %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Formulation}
+\setcounter{equation}{0}
+
+       The classical expression for the central charge has two contributions \cite{ls1}:
+       the Noether and the topological terms,
+\beq
+        \mc{Z} ~~=~~ i\, M_a\, q^a  ~~+~~ \int\, dz\, \p_z\, O \,, \qquad\qquad
+	a ~=~ 1,\,...\, N-1\,.
+	\label{21}
+\eeq
+       where $ M^a $ are the twisted masses (in the geometric formulation),
+\beq
+       M_a  ~~=~~ m^a ~-~ m^0\,,
+\eeq
+$m^a$ (a=1,2, ..., N) are the masses in the gauge formulation, and the operator $O$ consists of two parts, canonical and anomalous,
+\begin{eqnarray}
+O & = &
+O_{\rm canon} + O_{\rm anom},\\[2mm]
+O_{\rm canon } 
+\label{23}
+& = &
+\sum_{a= 1}^{N-1} M_a D^a,\\[2mm]
+O_{\rm anom} 
+\label{24}
+& = &
+- \frac{N\, g_0^2}{4\pi}\left(
+\sum_{a=1}^{N-1} M_a D^a + g_{i\bar{j}} \,\bar \psi^{\bar{j}}\,\frac{1-\gamma_5}{2}\,\psi^i
+\right).
+\label{25}
+\end{eqnarray}
+Moreover, the Noether charges $ q^a $ can be obtained from $N-1$ U(1) currents $ J_\mu^a $
+defined as\,\footnote{There is a typo in the definition of these currents in \cite{ls1}.}
+\begin{eqnarray}
+%
+       J_{RL}^a  
+       &=&
+        g_{i\bj}\; \bphi^\bj\, (T^a)^{i\bj}\, i\overleftrightarrow{\p}{}_{\scriptscriptstyle \!\!\!\!RL}\, \phi^i   \nonumber\\[2mm]
+%
+                 & +&
+                  \frac{1}{2}\, g_{i\bj}\; \bpsi{}_{\scriptscriptstyle LR}^\bmm 
+                         \lgr  ( T^a )_\bmm^{\ \bp}\, \delta_\bp^{\ \bj} ~+~ 
+	                       \bphi{}^\br\, (T^a)_\br^{\ \bkk}\, \Gamma^{\;\bj}_{\bkk\bmm} \rgr   \psi_{\scriptscriptstyle LR}^i \nonumber \\[2mm]
+%
+                 & +&
+                  \frac{1}{2}\, g_{i\bj}\; \bpsi{}_{\scriptscriptstyle LR}^\bj
+                         \lgr  \delta^i_{\ p}\, (T^a)^p_{\ m} ~+~ 
+		               \Gamma_{mk}^{\;i}\, (T^a)^k_{\ r}\, \phi^r \rgr   \psi_{\scriptscriptstyle LR}^m
+\label{u1cur}
+\end{eqnarray}
+       in the geometric representation, and
+\begin{align}
+%
+\notag
+       J_{RL}^a  & ~~=~~ i\, \ov{n}{}_a \overleftrightarrow{\p}_{\scriptscriptstyle RL} n^a 
+                   ~~-~~ |n^a|^2 \cdot i\, ( \ov{n} \overleftrightarrow{\p} n ) \\
+%
+                 & ~~+~~ \qquad 
+                         \bxi{}_{\scriptscriptstyle LR}^a\, \xi_{\scriptscriptstyle LR}^a  ~~-~~
+                         |n^a|^2 \cdot ( \bxi{}_{\scriptscriptstyle LR}\, \xi_{\scriptscriptstyle LR} )
+\end{align}
+       in the gauged formulation. Here
+ \beq
+ \left(T^a
+ \right)^i_k = \delta_a^i\delta^a_k \,,\quad (\mbox{no summation over $a$!})
+ \eeq
+ and a similar expression for the overbarred indices.
+Finally,
+       $ D^a $ are the Killing potentials,
+\beq
+       D^a  ~~=~~ r_0\, \frac{ \bphi\,\, T^a\, \phi } 
+                           {  1  ~+~  |\phi|^2  }
+            ~~=~~ r_0\, \frac{ \bphi^a\, \phi^a   }
+                           {  1  ~+~  |\phi|^2  }\,.
+                           \label{29}
+\eeq
+       The generators $ T^a $ always pick up the $ a $-th component.
+       In this expression, 
+       \beq
+       r _0=\frac{ 2 }{ g_0^2}
+        \eeq 
+        is a popular alternative notation for the sigma model coupling.
+        
+        Note that Eq. (\ref{29}) contains the bare coupling. It is clear that the one-loop correction must (and will) convert the bare coupling  into the renormalized coupling. The anomalous part $O_{\rm anom}$ is obtained at one loop.
+        Therefore, in the one-loop approximation for the central charge 
+        it is sufficient to treat $O_{\rm anom}$ in the lowest order. Moreover, the bifermion term 
+        in $O_{\rm anom}$ plays a role only in the two-loop approximation. As a result, to calculate the central charge at one loop it is sufficient to analyze 
+        the one-loop correction to $O_{\rm canon}$. The latter is determined by the tadpole graphs in Fig. XXX. As usual, the simplest way to perform the calculation is the background field method.
+The part of the central charge under consideration is determined by the value of the fields at the spatial infinities. 
+In the CP(2) model to be considered below there are three vacua and three possible ways
+of interpolation between them. All kinks are equivalent. We will choose a  particular kink
+corresponding to the following boundary conditions:
+\beq
+\phi^1 (z=-\infty ) = 0\,,\qquad \phi^1 (z=+\infty ) = \infty\,,\qquad  \phi^2 = 0\,.
+\label{211}
+\eeq
+We split the field $\phi$ into two parts,
+\beq
+\phi = \phi_{\rm b} + \phi_{\rm qu}\,,
+\label{212}
+\eeq
+ and expand $D^a$ in $\phi_{\rm qu}$ keeping  terms quadratic in $\phi_{\rm qu}$.
+ 
+ 
+ 
+     
+\newpage
+
+A digression is in order regarding the one-loop central charge in the gauged formulation.
+ $ D^a $ receives a one-loop contribution, due to $ r $, as is 
+       most easily seen in the gauge representation of this operator,
+\beq
+       D^a  ~~=~~ r \cdot \ov{n}{}_a\, n^a \,,\qquad\qquad   | n_l |^2 ~=~ 1\,.
+\eeq
+       The renormalized operator contains the running coupling 
+\beq
+       r    ~~=~~ r_0  ~-~ \frac{N}{2\pi}\,\ln\, \frac{M_\text{UV}}
+                                                      {   |M^a|   } \,.
+\eeq
+       In general, it is some typical mass scale that appears in the denominator of the logarithm, but, {\it e.g.}
+       in CP(2) with $\mc{Z}_3$ twisted mass terms all masses and all mass differences have equal magnitude. 
+       The UV cut-off $ M_\text{UV} $ and bare constant $ r_0 $ can be turned 
+       into the strong coupling scale $ \Lambda $:
+\beq
+       r    ~~=~~ \frac{N}{2\pi}\, \ln\, \frac{   |M^a|   }
+                                              {  \Lambda  }\,.
+\eeq
+
+
+       We will be looking for the semi-classical expression for the central charge in the presence
+       of the soliton interpolating between vacua ({\sc \small 0}) and ({\sc \small 1})
+\beq
+       \phi^1(z)  \,~~=~~\, e^{|M^1| z}\,, \qquad\qquad  \phi^2(z) \,~~=~~\, \phi^3(z) \,~~=~~ \,~...~\, ~~=~~\, 0\,.
+\eeq
+       That this is the right kink can be seen in the gauged formulation,
+\begin{align}
+%
+\notag
+       n^0  & ~~=~~ \frac {             1              }
+                          {\sqrt{ 1 ~+~ e^{2 |M^1| z} }}\,, \\[3mm]
+%
+\notag
+       n^1  & ~~=~~ \frac {         e^{|M^1| z}        }
+                          {\sqrt{ 1 ~+~ e^{2 |M^1| z} }}\,, \\[3mm]
+%
+\notag
+       n^2  & ~~=~~ \qquad~~\, 0\,,  \\[2mm]
+%	 
+            & ~~~\,\vdots          \\[2mm]
+%
+\notag
+       n^k  & ~~=~~ \qquad~~\, 0\,,  \\[2mm]
+%	 
+\notag
+            & ~~~\,\vdots          \\[2mm]
+%
+\notag
+       n^{N-1} & ~~=~~ \qquad~~\, 0\,.                
+\end{align}
+
+       In this background, $ D^a $ taken at the edges of the worldsheet yields just the coupling constant:
+\beq
+       D^a \Big|^{\scriptscriptstyle +\infty}_{\scriptscriptstyle -\infty} ~~=~~    r\,.
+\eeq
+       Therefore, the topological contribution to the central charge of the kink is
+\beq
+       \mc{Z} ~~\supset~~ \frac{N}{2\pi}\, M^1\, \ln\, \frac{   |M^a|   }
+                                                            {  \Lambda  }\,.
+\eeq
+
+       As for the Noether contribution, the quantization of the ``angle'' coordinate of the kink gives 
+\beq
+       i\, n\, M^1\,,
+\eeq
+       with $ q^1 ~=~ n $ an integer number.
+       As for the other $ q^k $, the kink does not have fermionic zero-modes of $ \psi^k $ with $ k = 2,\, 3,\, ...\, N-1 $.
+       However, we will argue that there is a
+       {\it non}-zero mode relevant to the problem of multiple towers that we consider (in fact, 
+       the existence of this nonzero mode was noted by Dorey {\it et al.} \cite{Dorey:1999zk}).
+       This mode describes a bound state of the kink and a fermion $ \psi^k $. 
+     
+     \section{Semiclassical calculation of the central charge  in CP(2)}
+     \label{semclas}
+     
+     If the twisted masses $M_a$ satisfy the condition
+     \beq
+     |M_a|\gg\Lambda\,,
+     \eeq
+       then we find ourselves at weak coupling where the one-loop calculation of the
+       central charges will be sufficient for our purposes. This calculation can be carried out in a straightforward manner for all CP$(N-1)$ models, but for the sake if simplicity we will limit ourselves to CP(2). Generalization to larger $N$ is quite obvious. 
+       
+In CP(2) there are two twisted mass parameters, $M_1$ and $M_2$, as shown in Fig. XXX.  Accordingly, there are two U(1) charges, see Eq. (\ref{u1cur}). The Noether charges are not renormalized; therefore we will focus on the topological part represented by the Killing potentials, which are renormalized. 
+
+\subsection{Topological contribution}
+
+One-loop calculations are most easily performed using the background field method.
+For what follows it is important that $\phi^2_{\rm b}\equiv 0$ for the kink under consideration.
+If so, all off-diagonal elements of the metric $g_{i\bar j}$ vanish, while the diagonal elements take the form
+\begin{eqnarray}
+&&
+g_{1\bar 1}^{\rm b} \equiv g_{1\bar 1}\Big|_{\phi_{\rm b}} = \frac{2}{g_0^2}\,\frac {1}{\chi^2}\,,\nonumber\\[3mm]
+&&
+g_{2\bar 2}^{\rm b} \equiv 
+g_{2\bar 2}\Big|_{\phi_{\rm b}} = \frac{2}{g_0^2}\,\frac {1}{\chi}\,,
+\end{eqnarray}
+where
+\beq
+\chi = 1 + \left| \phi^1_{\rm b}
+\right|^2
+\eeq
+At the boundaries $\phi_{\rm b}^{1,2}$ take their (vacuum) coordinate-independent values;
+therefore, the Lagrangian for the quantum fields can be written as
+\beq
+\mathcal{L}= g_{1\bar 1}^{\rm b} \left| \partial^\mu \phi^1_{\rm qu}\right|^2+
+g_{2\bar 2}^{\rm b} \left| \partial^\mu \phi^2_{\rm qu}\right|^2 + ...
+\label{324}
+\eeq
+where the ellipses stand for the terms irrelevant for our calculation.
+
+The Killing potentials can be expanded in the same way. Under the condition $\phi^2_{\rm b}\equiv 0$ 
+we arrive at
+\begin{eqnarray}
+D^1
+&=&
+ D^1\Big|_{\phi_{\rm b}} + \frac{2}{g_0^2}\, \frac{1-\left| \phi^1_{\rm b}
+\right|^2}{\chi^3}\, \left|  \phi^1_{\rm qu}\right|^2 
+- \frac{2}{g_0^2}\, \frac{\left| \phi^1_{\rm b}
+\right|^2}{\chi^2}\, \left|  \phi^2_{\rm qu}\right|^2 + ...\,,
+\nonumber\\[3mm]
+D^2
+&=&
+0\,.
+\label{325}
+\end{eqnarray}
+Equation (\ref{324})
+implies that the Green's functions of the quantum fields are
+\beq
+\left\langle \phi^1_{\rm qu}, \phi^1_{\rm qu}\right\rangle = \frac{g_0^2\,\chi^2 }{2}\, \frac{i}{k^2-\left|M\right|^2}\,,\qquad
+\left\langle \phi^2_{\rm qu}, \phi^2_{\rm qu}\right\rangle = \frac{g_0^2\,\chi }{2 }\, \frac{i}{k^2-\left|M\right|^2}\,.
+\label{326}
+\eeq
+where 
+\beq
+\left|M\right|\equiv \left|M_1\right|\equiv \left|M_2\right|\,.
+\eeq
+Now, combining (\ref{325}) and (\ref{326}) to evaluate the tadpoles graphs of Fig. XXX
+with $\phi^1_{\rm qu}$ and $\phi^2_{\rm qu}$ running inside
+we arrive at
+\begin{eqnarray}
+D^1_{\rm one-loop} 
+&=&
+ \frac{1}{4\pi}\, \ln \frac{\left| M_{\rm uv}\right|^2}{\left|M\right|^2}
+ \nonumber\\[3mm]
+ &\times&
+ \left( \frac{1-\left| \phi^1_{\rm b}
+\right|^2}{\chi} - \frac{\left| \phi^1_{\rm b}
+\right|^2}{\chi}
+ \right)^{\phi_{\rm b}^{1}=0}_{\phi_{\rm b}^{1}=\infty}
+  \nonumber\\[3mm]
+  &=&
+  \frac{1}{4\pi}\, \ln \frac{\left| M_{\rm uv}\right|^2}{\left|M\right|^2}
+  \left(2 + 1
+  \right).
+\end{eqnarray}
+where $M_{\rm uv}$ is an ultraviolet cut-off (e.g. the Pauli-Villars regulator mass). The first and second terms in the parentheses come from the $\phi^1_{\rm qu}$ and $\phi^2_{\rm qu}$ loops, respectively. In the general case of the CP$(N-1)$ model
+one must replace $2+1$ by $2+ 1\times (N-2) = N$.
+
+This information allows us to obtain the contribution of the Killing potential to the central charge at one loop, namely,
+\beq
+\Delta_{\rm K}{\mathcal Z} = -2M_1\left[\frac{1}{g_0^2} -
+\frac{3}{4\pi} \left(\ln\left|\frac{M_{\rm uv}}{M} 
+\right| +1
+\right)
+\right]
+\label{329}
+\eeq
+Note that the renormalized coupling in the case at hand is \cite{Novikov:1984ac}
+\beq
+\frac{1}{g^2}=
+\frac{1}{g_0^2} -
+\frac{3}{4\pi}  \ln\left|\frac{M_{\rm uv}}{M} \right |\,.
+\label{330}
+\eeq
+For the generic CP$(N-1)$ model the coefficient 3 in front of the logarithm 
+in (\ref{330}) is
+repalced by $N$.
+
+\subsection{Contribution of the Noether charges}.
+
+This is not the end of the story, however. We must add to $\Delta_{\rm K}{\mathcal Z}$
+a part of the central charge associated with the Noether terms in (\ref{21}), which accounts for the quantziation of the
+fermion zero modes as well as effects of the $\theta$ term.
+
+
+\subsection{Weak-coupling expansion}
+%\setcounter{equation}{0}
+
+       We can start from the known superpotential of the Veneziano--Yankielowicz type, and the spectrum that it generates.
+       It gives the  exact solution of the CP$(N-1)$ model with twisted masses in the BPS sector. 
+       In our case of $\mc{Z}_N$ symmetric twisted masses this superpotential is given in \cite{Bolokhov:2011mp}.
+       
+       Here we narrow down to the case of CP(2), with masses that are $ \mc{Z}_3 $ symmetric.
+The central charge determining the BPS spectrum is given by the difference of the values of the superpotential in  two vacua.
+The general formula adjusted for CP(2) is  \cite{Bolokhov:2011mp} as follows:
+\begin{eqnarray}
+       \mc{Z}\Big|^{\scriptscriptstyle +\infty}_{\scriptscriptstyle -\infty} 
+       &=&
+       U_0(m_0)  ~~+~~ i\, n\, M_1 ~~+~~ i\, \left\{
+       \begin{array}{ll}
+       m_0\\[1mm]m_2
+       \end{array}
+       \right.
+       \nonumber\\[3mm]
+       &\stackrel{|m_0|\to\infty}{\longrightarrow}&
+-
+       \frac{3}{2\pi}\, M^1\, \Big\{ \ln\, \frac {   |M_1|   }
+                                                 {  \Lambda  } -1 \Big\} +  \frac{1}{4\sqrt{3}}\; M_1\, +i\,n\, M_1
+       +  i\,\left\{
+       \begin{array}{ll}
+       m_0\\[1mm]m_2
+       \end{array}
+       \right. +
+       ...
+        \nonumber\\[3mm]
+       \label{331}
+\end{eqnarray}
+       where the ellipsis represents  suppressed terms dying off as inverse powers of the large mass parameter.
+As was mentioned, we assume  in Eq. (\ref{331}) the parameter $ m^0 $ to be real 
+and positive. (This assumption is inessential and can be easily lifted but we will not do it in this paper.)
+
+It is not difficult to rearrange the last double-valued term presenting it as a linear combination of $m_0+m_2$ and $M_2$.
+Then Equation (\ref{331}) takes the form
+\beq
+   \mc{Z} = 
+-
+       \frac{3}{2\pi}\, M^1\, \Big\{ \ln\, \frac {   |M_1|   }
+                                                 {  \Lambda  } -1 \Big\} +i\,n \, M_1
+                                                 -\frac{i}{4} \, M_1 \mp \frac{i}{2}\, M_2\,.
+\eeq
+
+
+       Theoretically it is possible to redefine $ \Lambda $ by switching on the $\theta$ term,
+       which can be introduced as a phase of $\Lambda$, namely $\Lambda \to \Lambda e^{-i\theta /3}$.
+       The Veneziano--Yankielowicz superpotential is defined with a ``non-perturbative'' 
+       $ \Lambda_\text{np} $, which may be related to the perturbative $ \Lambda_\text{pt} $ as
+       \beq
+       \Lambda_\text{np}^3 =  -i \, \Lambda_\text{pt}^3\,. 
+       \eeq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                          B O U N D   S T A T E S                               %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bound States}
+\label{bound}
+
+\setcounter{equation}{0}
+
+       To find the non-zero mode, we write out the linearized Dirac equations in the background
+       of the $ \phi^1 $ kink.
+       For convenience, we rescale the variable $ z $ into a dimensionless variable $ s $:
+\beq
+       s ~~=~~ 2\, |M^1|\, z\,.
+\eeq
+       Then the kink takes the form
+\beq
+       \phi^1(s) ~~=~~ e^s\,,\qquad\qquad\text{and}\quad \phi^k(s) ~~=~~ 0 \qquad \text{for}~~ k ~>~ 1\,,
+\eeq
+       or
+\begin{align}
+%
+\notag
+       n^0  & ~~=~~ \frac {             1              }
+                          {    \sqrt{ 1 ~+~ e^s }      }\,, \\[3mm]
+%
+\notag
+       n^1  & ~~=~~ \frac {          e^{s/2}           }
+                          {    \sqrt{ 1 ~+~ e^s }      }\,, \\[3mm]
+%
+\notag
+       n^2  & ~~=~~ \qquad~~\, 0\,,  \\[2mm]
+%	 
+            & ~~~\,\vdots          \\[2mm]
+%
+\notag
+       n^k  & ~~=~~ \qquad~~\, 0\,,  \\[2mm]
+%	 
+\notag
+            & ~~~\,\vdots          \\[2mm]
+%
+\notag
+       n^{N-1} & ~~=~~ \qquad~~\, 0\,.                
+\end{align}
+
+       The masses will also turn dimensionless by the same factor,
+\beq
+       \mu^l  ~~=~~ \frac{ m^l }
+                        {2 |M^1|}\,,
+	\qquad
+	\text{and}
+	\qquad
+	\mu_G^a ~~=~~ \frac{ M^a }
+                          {2 |M^1|}\,,
+\eeq
+       written both for geometric and gauge formulations.
+
+       The linearized Dirac equations for the fermion $ \psi^k $ with $ k ~>~ 1 $ then look like
+\begin{align}
+%
+\notag
+       \Big\{ \p_s  ~-~ |\mu_G^1|\, f(s) \Big\}\,\, \psi_R^k   ~~+~~  i \lgr  \mu_G^1\, f(s)  ~-~  \mu_G^k \rgr\! \cdot \psi_L^k  
+       & ~~=~~ \phantom{-} i\, \lambda\, \psi_L^k   \\[2mm]
+%
+       \Big\{ \p_s  ~-~ |\mu_G^1|\, f(s) \Big\}\,\, \psi_L^k   ~~-~~  i \lgr \ov{\mu}{}_G^1\, f(s)  ~-~ \ov{\mu}{}_G^k \rgr\! \cdot \psi_R^k 
+       & ~~=~~ - i\, \ov{\lambda}\, \psi_R^k \,.
+\end{align}
+       Here $ f(s) $ is a real function
+\beq
+       f(s) ~~=~~ \frac{     e^s     }
+                       { 1  ~+~  e^s }\,.
+\eeq
+       Eigenvalue $ \lambda $ is zero for zero-modes, or gives the energy for non-zero modes.
+       If one starts from the gauged formulation, one arrives at a simpler system, which can be obtained from the
+       above one by redefinition of the functions.
+       That is, the conversion between the geometric and gauge formulations is precisely such as to remove the inhomogeneous term from the
+       figure brackets,
+\begin{align}
+%
+\notag
+       \p_s\, \xi_R^k  ~~+~~  i \lgr \mu_G^1\, f(s) ~-~ \mu_G^k \rgr\! \cdot \xi_L^k  & ~~=~~ \phantom{-} i\, \lambda\, \xi_L^k \\[2mm]
+%
+       \p_s\, \xi_L^k  ~~-~~  i \lgr \ov{\mu}{}_G^1\, f(s) ~-~ \ov{\mu}{}_G^k \rgr\! \cdot \xi_R^k & ~~=~~ - i\, \ov{\lambda}\, \xi_R^k \,.
+\end{align}
+       
+       This system does not allow normalizable zero modes.
+       However, there is a normalizable non-zero mode with the energy given by the absolute value of 
+\beq
+       \lambda  ~~=~~  - \mu_G^k  ~+~ \alpha \mu_G^1\,.
+\eeq
+       The mode is
+\begin{align}
+%
+\notag
+       \xi_R^k  & ~~=~~  \lgr \frac{  e^{\alpha s}  }
+                                   {   1 ~+~ e^s    }  \rgr^{ |\mu_G^1| }  \\[2mm]
+%
+       \xi_L^k  & ~~=~~  - i\, \frac{ \ov{\mu}{}_G^1 }
+                                    {  | \mu_G^1 |   } \cdot \xi_R^k\,.
+\end{align}
+       It is normalizable as long as
+\beq
+       0  ~~\, < \,~~  \alpha  ~~\, < \,~~ 1\,,
+\eeq
+       and it is BPS if $ \alpha $ takes the special value (returning to the dimensionful masses)
+\beq
+       \alpha ~~=~~ \frac{|M^k|}
+                         {|M^1|}\, \cos\, \text{Arg}\; \frac { M^k } 
+                                                             { M^1 }\,.
+\eeq
+       In this case the energy of the mode equals
+\beq
+       | \lambda | ~~=~~ -  |M^k|\, \sin\, \text{Arg}\; \frac { M^k } 
+                                                              { M^1 }\,.
+\eeq
+
+       That it is BPS can be seen from the expansion of the central charge
+\beq
+       |\, r \cdot M^1  ~+~ i\, M^k \,|  ~~=~~ r \cdot | M^1 |  ~~-~~ | M^k | \cdot \sin \text{Arg}\; \frac { M^k } 
+                                                                                                            { M^1 }  
+                                                                ~~+~~ ... \,,
+\eeq
+       in the large coupling constant $ r $.
+       This is the central charge of the bound state of a fermion and the kink 
+       as discovered by Dorey {\it et al.} \cite{Dorey:1999zk}, written semi-classically.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%               W E A K   C O U P L I N G   E X P A N S I O N                    %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Weak Coupling Expansion}
+%\setcounter{equation}{0}
+
+%       We can start from the exact known superpotential, and the spectrum that it generates.
+%       Here we narrow down to the case of CP(2), with masses concord with $ Z^3 $ symmetry.
+
+%       The spectrum we think is given by the difference of superpotentials at the two vacua 
+%       plus the addition of masses \cite{Bolokhov:2011mp},
+%\beq
+%       \mc{Z}\Big|^{\scriptscriptstyle +\infty}_{\scriptscriptstyle -\infty} ~~=~~
+%       U_0(m_0)  ~~+~~ i\, n\, M_1 ~~+~~ i\, m^k\,,
+%       \qquad\qquad k~=~1,\,2\,.
+%\eeq
+
+%       In the semi-classical limit, this gives,
+%\beq
+%       \mc{Z} ~~=~~
+%       \frac{3}{2\pi}\, M^1\, \Big\{ \ln\, \frac {   |M_1|   }
+%                                                 {  \Lambda  } ~-~ 3 \Big\}
+%       ~~+~~ i\, m^k 
+%       ~~-~~ \frac{1}{4\sqrt{3}}\; M_1\, 
+%       ~~+~~ ...
+%\eeq
+%       where the ellipsis represents the suppressed terms.
+%       This expression is obtained in the limit of large masses, with $ m^0 $ held real and positive. 
+%       Theoretically it is possible to redefine $ \Lambda $ such that the last unsuppressed term
+%       turns into $ -\, i\, m^0 $.
+%       That is, the Veneziano-Yankielowicz superpotential is defined with a ``non-perturbative'' 
+%       $ \Lambda_\text{np} $, which is related to the perturbative one $ \Lambda_\text{pt} $ in such 
+%       a way as to turn the unsuppressed term exactly into
+%\beq
+%       i \, (\, m^k ~-~ m^0 \,)  ~~=~~ i\, M_k\,.
+%\eeq
+%       This way the expansion of the exact superpotential would agree with the perturbative formula above.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%               W E A K   C O U P L I N G   E X P A N S I O N                    %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matching the Central Charges}
+\setcounter{equation}{0}
+
+       The following central charges need to meet the correspondence.
+\vspace{0.6cm}
+
+\begin{itemize}
+\item
+       The 4-dimensional central charge (at the root of the baryonic Higgs branch),
+\beq
+       \mc{Z}  ~~=~~ i\, \vec{n}{}_m \cdot \vec{a}{}_D  ~~+~~ i\, \vec{n}{}_e \cdot \vec{a}  
+               ~~+~~ i\, m^a \cdot S^a ~~+~~ i\, m^k \; \vec{w}^k
+\eeq
+
+\item
+       For magnetic charge one, and electric charge $ \vec{\alpha}{}_1 $ this gives, up to normalization,
+\beq
+       \mc{Z}  ~~=~~ i\, a_D(m_0)  ~~+~~ i\, ( m^1 ~-~ m^0 )\, n ~~+~~ i\, ( m^k ~-~ m^0 )\,.
+\eeq
+
+\item
+       Our 2-d expression for the central charge gives
+\beq
+       \mc{Z}  ~~=~~ U_0(m_0)      ~~+~~ i\, ( m^1 ~-~ m^0 )\, n ~~+~~ i\, m^k\,. 
+\eeq
+       It could be that the four-dimensional $ \Lambda $ differs from the two-dimensional one, although
+       then one of them would have to depend on the masses.
+
+\item
+       The above two-dimensional charge, when expanded, gives
+\beq
+       \mc{Z} ~~=~~        
+       \frac{3}{2\pi}\, (m^1 ~-~ m^0)\, \bigg\{ \ln\, \frac {   | m^1 \,-\, m^0 |   }
+                                                            {        \Lambda        } ~-~ 3 \bigg\}
+       ~~+~~ i\, m^k 
+       ~~-~~ \frac{1}{4\sqrt{3}}\; ( m^1 ~-~ m^0 )\, 
+       ~~+~~ ...
+\eeq
+
+\item
+       The perturbative result gives 
+\beq
+       \mc{Z} ~~=~~        
+       \frac{3}{2\pi}\, (m^1 ~-~ m^0)\, \bigg\{ \ln\, \frac {   | m^1 \,-\, m^0 |   }
+                                                            {        \Lambda        } ~-~ 3 \bigg\}
+       ~~+~~ i\, ( m^k ~-~ m^0)
+\eeq
+
+\item
+       The original classical expression is
+\beq
+       \mc{Z} ~~=~~ i\, (m^k ~-~ m^0)\, q^k  ~~+~~ (m^k ~-~ m^0) \cdot D^k \Big|^{\scriptscriptstyle +\infty}_{\scriptscriptstyle -\infty}
+\eeq
+\end{itemize}
+
+\vspace{0.2cm}
+       All these expressions must agree with each other
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                            C O N C L U S I O N                                 %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+\label{conclu}
+\setcounter{equation}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                                %
+%                        A C K N O W L E D G M E N T S                           %
+%                                                                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgments}
+The work of PAB and MS was supported by the DOE grant DE-FG02-94ER40823.
+The work of AY was  supported
+by  FTPI, University of Minnesota,
+by the RFBR Grant No. 09-02-00457a
+and by the Russian State Grant for
+Scientific Schools RSGSS-65751.2010.2.
+	
+	
+
+\begin{thebibliography}{99}
+
+
+
+
+\bibitem{MR1}
+  K.~Hori and C.~Vafa,
+{\em Mirror symmetry,}
+  arXiv:hep-th/0002222.
+  %%CITATION = HEP-TH/0002222;%%
+  
+  \bibitem{MR2}
+E.~Frenkel and A.~Losev,
+  %``Mirror symmetry in two steps: A-I-B,''
+  Commun.\ Math.\ Phys.\  {\bf 269}, 39 (2006)
+  [arXiv:hep-th/0505131].
+  %%CITATION = CMPHA,269,39;%%
+  
+  \bibitem{Shifman:2010id}
+  M.~Shifman, A.~Yung,
+  %``Non-Abelian Confinement in N=2 Supersymmetric QCD: Duality and Kinks on Confining Strings,''
+  Phys.\ Rev.\  {\bf D81}, 085009 (2010).
+  [arXiv:1002.0322 [hep-th]].
+
+\bibitem{ls1}
+  M.~Shifman, A.~Vainshtein, R.~Zwicky,
+  %``Central charge anomalies in 2-D sigma models with twisted mass,''
+  J.\ Phys.\ A {\bf A39}, 13005-13024 (2006).
+  [hep-th/0602004].
+  
+  
+\bibitem{Dorey:1999zk}
+  N.~Dorey, T.~J.~Hollowood, D.~Tong,
+  %``The BPS spectra of gauge theories in two-dimensions and four-dimensions,''
+  JHEP {\bf 9905}, 006 (1999).
+  [hep-th/9902134].
+
+\bibitem{Bolokhov:2011mp}
+P.~A.~Bolokhov, M.~Shifman, A.~Yung,
+{\em BPS Spectrum of Supersymmetric {\rm CP}$(N-1)$ Theory with $Z_N$ Twisted Masses,}
+    [arXiv:1104.5241 [hep-th]].
+    
+\bibitem{Novikov:1984ac}
+  V.A.~Novikov, M.A.~Shifman, A.I.~Vainshtein, and V.I.~Zakharov,
+ {\em Two-Dimensional Sigma Models: Modeling Nonperturbative Effects of Quantum Chromodynamics,}
+  Phys.\ Rept.\  {\bf 116}, 103 (1984);  A.Y.~Morozov, A.M.~Perelomov, and M.A.~Shifman,
+  %``Exact Gell-mann-low Function Of Supersymmetric Kahler Sigma Models,''
+  Nucl.\ Phys.\  {\bf B248}, 279 (1984).
+  
+  \bibitem{Dor}
+N.~Dorey,
+%``The BPS spectra of two-dimensional
+%supersymmetric gauge theories
+%with  twisted mass terms,''
+JHEP {\bf 9811}, 005 (1998) [hep-th/9806056].
+%%CITATION = HEP-TH 9806056;%%
+
+\bibitem{Shifman:2004dr}
+  M.~Shifman, A.~Yung,
+  %``NonAbelian string junctions as confined monopoles,''
+  Phys.\ Rev.\  {\bf D70}, 045004 (2004).
+  [hep-th/0403149].
+
+\bibitem{Shifman:2007ce}
+  M.~Shifman, A.~Yung,
+{\em Supersymmetric Solitons and How They Help Us Understand Non-Abelian Gauge Theories,}
+  Rev.\ Mod.\ Phys.\  {\bf 79}, 1139 (2007).
+  [hep-th/0703267].
+
+\end{thebibliography}
+
+
+
+\end{document}

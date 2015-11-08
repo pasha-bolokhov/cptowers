@@ -1,0 +1,352 @@
+\documentclass[epsfig,12pt]{article}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{rotating}
+
+%%%%%%%%%
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{color}
+\usepackage{bm}
+%\usepackage{showlabels}
+%%%%%%%%%%%%
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\Tr{{\rm Tr}}
+\newcommand{\nfour}{${\cal N}=4\;$}
+\newcommand{\ntwo}{${\mathcal N}=2\;$}
+\newcommand{\none}{${\mathcal N}=1\,$}
+\newcommand{\ntt}{${\mathcal N}=(2,2)\,$}
+\newcommand{\nzt}{${\mathcal N}=(0,2)\,$}
+\newcommand{\cpn}{CP$(N-1)\,$}
+\newcommand{\ca}{{\mathcal A}}
+\newcommand{\cell}{{\mathcal L}}
+\newcommand{\cw}{{\mathcal W}}
+\newcommand{\cs}{{\mathcal S}}
+\newcommand{\vp}{\varphi}
+\newcommand{\pt}{\partial}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\gs}{g^{2}}
+\newcommand{\zn}{$Z_N$}
+\newcommand{\cd}{${\mathcal D}$}
+\newcommand{\cde}{{\mathcal D}}
+\newcommand{\cf}{${\mathcal F}$}
+\newcommand{\cfe}{{\mathcal F}}
+
+\newcommand{\gsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle>}{\sim}\;$}}
+\newcommand{\lsim}{\lower.7ex\hbox{$
+\;\stackrel{\textstyle<}{\sim}\;$}}
+
+
+%%%%%%%%%%%%%
+%%%%%%%%%%%
+%% common definitions
+\def\stackunder#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\baselinestretch{1.1}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\ba{\beq\new\begin{array}{c}}
+\def\ea{\end{array}\eeq}
+\def\be{\ba}
+\def\ee{\ea}
+\def\stackreb#1#2{\mathrel{\mathop{#2}\limits_{#1}}}
+\def\Tr{{\rm Tr}}
+%\newcommand{\gsim}{\lower.7ex\hbox{$\;\stackrel{\textstyle>}{\sim}\;$}}
+% \newcommand{\lsim}{\lower.7ex\hbox{$
+%\;\stackrel{\textstyle<}{\sim}\;$}}
+%\newcommand{\nfour}{${\mathcal N}=4$ }
+%\newcommand{\ntwo}{${\mathcal N}=2$ }
+\newcommand{\ntwon}{${\mathcal N}=2$}
+\newcommand{\ntwot}{${\mathcal N}= \left(2,2\right) $ }
+\newcommand{\ntwoo}{${\mathcal N}= \left(0,2\right) $ }
+%\newcommand{\none}{${\mathcal N}=1$ }
+\newcommand{\nonen}{${\mathcal N}=1$}
+%\newcommand{\vp}{\varphi}
+%\newcommand{\pt}{\partial}
+%\newcommand{\ve}{\varepsilon}
+%\newcommand{\gs}{g^{2}}
+%\newcommand{\qt}{\tilde q}
+%\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+%%
+\newcommand{\p}{\partial}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+\newcommand{\Heff}{{\mathcal{H}_{\rm eff}}}
+\newcommand{\Leff}{{\mathcal{L}_{\rm eff}}}
+\newcommand{\el}{{\rm EM}}
+\newcommand{\uflavor}{\mathbf{1}_{\rm flavor}}
+\newcommand{\lgr}{\left\lgroup}
+\newcommand{\rgr}{\right\rgroup}
+
+\newcommand{\Mpl}{M_{\rm Pl}}
+\newcommand{\suc}{{{\rm SU}_{\rm C}(3)}}
+\newcommand{\sul}{{{\rm SU}_{\rm L}(2)}}
+\newcommand{\sutw}{{\rm SU}(2)}
+\newcommand{\suth}{{\rm SU}(3)}
+\newcommand{\ue}{{\rm U}(1)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+%%
+
+\newcommand{\LN}{\Lambda_\text{SU($N$)}}
+\newcommand{\sunu}{{\rm SU($N$) $\times$ U(1) }}
+\newcommand{\sunun}{{\rm SU($N$) $\times$ U(1)}}
+\def\cfl {$\text{SU($N$)}_{\rm C+F}$ }
+\def\cfln {$\text{SU($N$)}_{\rm C+F}$}
+\newcommand{\mUp}{m_{\rm U(1)}^{+}}
+\newcommand{\mUm}{m_{\rm U(1)}^{-}}
+\newcommand{\mNp}{m_\text{SU($N$)}^{+}}
+\newcommand{\mNm}{m_\text{SU($N$)}^{-}}
+\newcommand{\AU}{\mc{A}^{\rm U(1)}}
+\newcommand{\AN}{\mc{A}^\text{SU($N$)}}
+\newcommand{\aU}{a^{\rm U(1)}}
+\newcommand{\aN}{a^\text{SU($N$)}}
+\newcommand{\baU}{\ov{a}{}^{\rm U(1)}}
+\newcommand{\baN}{\ov{a}{}^\text{SU($N$)}}
+\newcommand{\lU}{\lambda^{\rm U(1)}}
+\newcommand{\lN}{\lambda^\text{SU($N$)}}
+%\newcommand{\Tr}{{\rm Tr\,}}
+\newcommand{\bxir}{\ov{\xi}{}_R}
+\newcommand{\bxil}{\ov{\xi}{}_L}
+\newcommand{\xir}{\xi_R}
+\newcommand{\xil}{\xi_L}
+\newcommand{\bzl}{\ov{\zeta}{}_L}
+\newcommand{\bzr}{\ov{\zeta}{}_R}
+\newcommand{\zr}{\zeta_R}
+\newcommand{\zl}{\zeta_L}
+\newcommand{\nbar}{\ov{n}}
+
+\newcommand{\CPC}{CP($N-1$)$\times$C }
+\newcommand{\CPCn}{CP($N-1$)$\times$C}
+
+\newcommand{\lar}{\lambda_R}
+\newcommand{\lal}{\lambda_L}
+\newcommand{\larl}{\lambda_{R,L}}
+\newcommand{\lalr}{\lambda_{L,R}}
+\newcommand{\bla}{\ov{\lambda}}
+\newcommand{\blar}{\ov{\lambda}{}_R}
+\newcommand{\blal}{\ov{\lambda}{}_L}
+\newcommand{\blarl}{\ov{\lambda}{}_{R,L}}
+\newcommand{\blalr}{\ov{\lambda}{}_{L,R}}
+
+\newcommand{\bgamma}{\ov{\gamma}}
+\newcommand{\bpsi}{\ov{\psi}{}}
+\newcommand{\bphi}{\ov{\phi}{}}
+\newcommand{\bxi}{\ov{\xi}{}}
+
+\newcommand{\ff}{\mc{F}}
+\newcommand{\bff}{\ov{\mc{F}}}
+
+\newcommand{\eer}{\epsilon_R}
+\newcommand{\eel}{\epsilon_L}
+\newcommand{\eerl}{\epsilon_{R,L}}
+\newcommand{\eelr}{\epsilon_{L,R}}
+\newcommand{\beer}{\ov{\epsilon}{}_R}
+\newcommand{\beel}{\ov{\epsilon}{}_L}
+\newcommand{\beerl}{\ov{\epsilon}{}_{R,L}}
+\newcommand{\beelr}{\ov{\epsilon}{}_{L,R}}
+
+\newcommand{\bi}{{\bar \imath}}
+\newcommand{\bj}{{\bar \jmath}}
+\newcommand{\bk}{{\bar k}}
+\newcommand{\bl}{{\bar l}}
+\newcommand{\bmm}{{\bar m}}
+\newcommand{\bp}{{\bar p}}
+\newcommand{\bkk}{{\bar k}}
+\newcommand{\br}{{\bar r}}
+
+\newcommand{\nz}{{n^{(0)}}}
+\newcommand{\no}{{n^{(1)}}}
+\newcommand{\bnz}{{\ov{n}{}^{(0)}}}
+\newcommand{\bno}{{\ov{n}{}^{(1)}}}
+\newcommand{\Dz}{{D^{(0)}}}
+\newcommand{\Do}{{D^{(1)}}}
+\newcommand{\bDz}{{\ov{D}{}^{(0)}}}
+\newcommand{\bDo}{{\ov{D}{}^{(1)}}}
+\newcommand{\sigz}{{\sigma^{(0)}}}
+\newcommand{\sigo}{{\sigma^{(1)}}}
+\newcommand{\bsigz}{{\ov{\sigma}{}^{(0)}}}
+\newcommand{\bsigo}{{\ov{\sigma}{}^{(1)}}}
+
+\newcommand{\rrenz}{{r_\text{ren}^{(0)}}}
+\newcommand{\bren}{{\beta_\text{ren}}}
+
+\newcommand{\mbps}{m_{\text{\tiny BPS}}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\hsigma}{{\hat{\sigma}}}
+
+
+\begin{document}
+
+	\hspace{0.8cm}Dear Nick,
+
+\vspace{0.8cm}
+	Thank you for your message of November 22 and the draft of your paper with K. Petunin, 
+	and sorry for the delay with answering caused by Thanksgiving holiday.
+	We need to say that we also have been working on the problem of the states 
+	that we found in our previous work, and this work is close to be complete. 
+	It has delayed somewhat, but now it should be finished rather quick.
+
+\vspace{0.8cm}
+	First of all, the ``extra'' states that we were discussing {\it are} the bound states 
+	of dyonic kinks and elementary states (it will be easier to call the latter colloquially just
+	dyons and quarks).
+	They are seen semiclassically as the fermionic non-zero modes of the Dirac equation in the
+	background of a kink.
+	
+\vspace{0.8cm}
+	Another important point is that in our previous work we used a somewhat suboptimal notations	
+	of the ``wandering unity'' for the ``electric'' charges,
+\beq
+\label{bnd}
+	U_0 (m_0) ~~+~~ i\, \vec{N} \cdot \vec{m}\,,\qquad\qquad  \vec{N} ~=~ (\, 0\,,~...~ 1\,,~ ... ~0\, )\,.
+\eeq
+	Although internally consistent, they might bring some confusion. 
+	At first one could think that $ \vec{N} $ corresponds to the fundamental representation
+	of SU($N$), which seems very tricky: semi-classically all states are root-like.
+	The correct resolution is that neither $ U_0 $ nor $ \vec{N} $ directly correspond to the 
+	``electric'' or ``magnetic'' charges --- they are mixed in these notations.
+	Instead, roughly speaking,
+\beq
+\label{M}
+ 	U_0 (m_0) ~~+~~ i\, m_0  ~~=~~ \mc{W}_1 ~-~ \mc{W}_0  ~~\equiv~~ \mc{M}
+\eeq
+	is the topological contribution to the central charge (the central charge of the monopole $ \mc{M} $), or what
+	one can loosely call $ a_D $ or $ m_D $, while
+\beq
+\label{q}
+	i\, (m_k ~-~ m_0) ~~\equiv~~ \mc{Q}_k
+\eeq
+	is the central charge of the $ k $-th quark.
+	Together they give \eqref{bnd}.
+	The quantities $ \mc{W}_{0,1} $ are shorthands for $ \mc{W}(\sigma_0) $ and $ \mc{W}(\sigma_1) $.
+	Function $ U_0 $ is convenient since it is continuous in the physical region, and is helpful
+	in, {\it e.g.} plotting the CMS pictures.
+	But the above provisions need to be understood.
+	Above formulas are valid in the (rather broad) vicinity of the ``zeroth'' Argyres-Douglas point,
+	that is why $ m_0 $ appears to be a preferred number.
+	In the vicinity of the next AD point, $ m_1 $ will be preferred, and so on.
+	We believe these notations, although maybe requiring a bit extra care with regards to branch cuts,
+	are more transparent in terms of the physical quantities.
+	We plan to present our work in these notations, therefore, where the monopole $ \mc{M} $
+	is given by
+\beq
+	\mc{M} ~~=~~ \mc{W}_1 ~-~ \mc{W}_0 \,
+\eeq
+	and the ``electric'' charges are root-like.
+
+\vspace{0.8cm}
+	We have a few remarks regarding your draft directly. 
+	In most cases, we, of course, assume the $ \mc{Z}_n $-symmetric masses.
+
+\vspace{0.8cm}
+	First, {\it concerning formula (10)}. 
+	As just explained $ U_0(m_0) $ does not always give the difference of the superpotential values in two vacua,
+	and, in the area adjacent to the AD point it certainly does not:
+	the difference vanishes at the AD point, while $ U_0(AD) $ just gives some finite number.
+	The same is true regarding the relation
+\beq
+	\mc{W}(\sigma_k) ~~=~~ e^{2\pi i k / n} \, \mc{W}(\sigma_0).
+\eeq
+	This equality also does not hold everywhere, and importantly, not near the AD point.
+	However, adding the $ m_0 $ mass, one can obtain
+\beq
+	\mc{W}(\sigma_1) ~~=~~ e^{2\pi i / n} \, \mc{W}(\sigma_0) ~~+~~ i\,m_0\,.
+\eeq
+	That means that the quantity which you define as $ m_{DI} $ needs to be used with caution.
+	In particular, again, $ m_{D1} - m_{D0} $ does not give the topological contribution,
+	but since it always comes supplemented by $ m_0 $ (as in your formulas (21) and (22)), they
+	together total into a topological contribution.
+
+\vspace{0.8cm}
+	{\it Formulae (21), (22) and onwards}. 
+	Just a remark that, see {\it e.g.} Eq.~\eqref{q}, the central charge of a quark always comes
+	with a factor of ``i'' times its mass (as opposed to, say $ m_{DI} $).
+	This is correlated with the definition of $ m_{DI} $, in which the jumps of the logarithms
+	would produce the mass of the quark, and such jumps are imaginary.
+	We do not know whether you meant to have this factor of ``i'' in (21) and (22) or used 
+	a different normalisation.
+
+\vspace{0.8cm}
+	{\it Formula (36)}. 
+	The formula is easy to understand, but the result is puzzling.
+	In our (previous and current) paper we have exhaustingly explored the case of CP$^\text{2}$, 
+	but not the case of larger even $ n $.
+	Still, mirror theory predicts the existence of $ n $ kinks in the strong coupling region
+	regardless of the parity of $ n $.
+	One of them is a monopole, but the other ones just have to be the bound states of the monopole
+	and quarks. 
+
+\vspace{0.8cm}
+	{\it Formulae (38), (39)}.
+	Our analysis of the decay of the bound state of a dyon and quark 
+\beq
+	\mc{D}^{(\nu)} \!\cdot\! \mc{Q}_2 ~~\to~~ \mc{M} \!\cdot\! \mc{Q}_2  ~~+~~ \nu \cdot \mc{Q}_1
+\eeq
+	was made purely on the basis of the superpotential.
+	Here we show the decay written in the heuristic notations, $ \mc{D}^{(\nu)} $ being the dyon
+	with the ``electric'' charge $ \nu $.
+	The product on the left hand side denotes the bound state of that dyon and the second quark.
+	That bound state decays into a bound state of a monopole and the same quark, plus a number of
+	the first quarks.
+	Their central charges are as in Eqs.~\eqref{M} and \eqref{q}.
+	The decay seems quite possible if the central charges of the terms on the right 
+	hand side are aligned.
+	As we said above, vector $ \vec{N} $ does not directly correspond to the ``electric'' charge
+	of the state, and so now we change our notations into the form
+\beq
+	\vec{S} ~~=~~ (\, -1\,,~...~ 1\,,~ ... ~0\, )
+\eeq
+	and
+\beq
+	\vec{T} ~~=~~ (\, -1\,, ~1\,, ~0\,,~ ... ~0\, )\,.
+\eeq
+	Given this change in the notation for the ``electric'' and ``magnetic'' chages,
+	it quite may be that the Kontsevich-Soibelman relations for the above decay will change.
+	It is not clear however whether these relations will ``profit'' from this change,
+	that is, will become consistent.
+	On the other hand, we think that the KS relations should respect decay modes which
+	are open by the condition of alignment of the central charges.
+
+\vspace{1.0cm}
+	\hspace{0.9cm}Please let us know of any questions if there are
+
+\vspace{0.8cm}
+	\hspace{0.3cm}Sincerely,
+
+\vspace{0.7cm}
+	\hspace{-0.7cm}
+	Alexei Yung, Misha Shifman and Pasha Bolokhov
+
+
+\end{document}
